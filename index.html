@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Marcos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="frame" id="frame1">
+               <h1>UPDS Labs</h1>
+    
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="frame" id="frame2">
+            <h2>Laboratorios</h2>
+            <div class="button-list">
+                <button onclick="loadLabInfo('laboratorio1.html')">Laboratorio 1</button>
+                <button onclick="loadLabInfo('laboratorio2.html')">Laboratorio 2</button>
+                <button onclick="loadLabInfo('laboratorio3.html')">Laboratorio 3</button>
+                <button onclick="loadLabInfo('laboratorio4.html')">Laboratorio 4</button>
+                <button onclick="loadLabInfo('laboratorio5.html')">Laboratorio 5</button>
+                <button onclick="loadLabInfo('laboratorio6.html')">Laboratorio 6</button>
+                <button onclick="loadLabInfo('laboratorio7.html')">Laboratorio 7</button>
+                <button onclick="loadLabInfo('laboratorio8.html')">Laboratorio 8</button>
+                <button onclick="loadLabInfo('laboratorio9.html')">Laboratorio 9</button>
+                <button onclick="loadLabInfo('laboratorio10.html')">Laboratorio 10</button>
+            
+            </div>
+        </div>
+        <div id="lab-info"></div> <!-- Contenedor para la información del laboratorio -->
+        <div class="frame" id="frame3">
+            <h2>Disponibilidad de Laboratorios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Laboratorio</th>
+                        <th>Disponibilidad</th>
+                        <th>Capacidad (personas)</th>
+                        <th>Equipos de cómputo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laboratorio 1</td>
+                        <td>Disponible</td>
+                        <td>30</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 2</td>
+                        <td>No disponible</td>
+                        <td>48</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 3</td>
+                        <td>Disponible</td>
+                        <td>28</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 4</td>
+                        <td>No disponible</td>
+                        <td>30</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 5</td>
+                        <td>Disponible</td>
+                        <td>40</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 6</td>
+                        <td>No disponible</td>
+                        <td>35</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 7</td>
+                        <td>Disponible</td>
+                        <td>35</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 8</td>
+                        <td>Disponible</td>
+                        <td>35</td>
+                        <td>26</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 9</td>
+                        <td>No disponible</td>
+                        <td>50</td>
+                        <td>31</td>
+                    </tr>
+                    <tr>
+                        <td>Laboratorio 10</td>
+                        <td>No disponible</td>
+                        <td>50</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   <script>
+        function loadLabInfo(labNumber) {
+            const labInfo = {
+                1: {
+                    title: "Laboratorio 1",
+                    description: "Información sobre el Laboratorio 1...",
+                    availability: "Disponible",
+                    equipment: 21,
+                    capacity: 30
+                },
+                2: {
+                    title: "Laboratorio 2",
+                    description: "Información sobre el Laboratorio 2...",
+                    availability: "No disponible",
+                    equipment: 31,
+                    capacity: 48
+                },
+                3: {
+                    title: "Laboratorio 3",
+                    description: "Información sobre el Laboratorio 3...",
+                    availability: "Disponible",
+                    equipment: 21,
+                    capacity: 28
+                },
+                4: {
+                    title: "Laboratorio 4",
+                    description: "Información sobre el Laboratorio 4...",
+                    availability: "No disponible",
+                    equipment: 13,
+                    capacity: 30
+                },
+                5: {
+                    title: "Laboratorio 5",
+                    description: "Información sobre el Laboratorio 5...",
+                    availability: "Disponible",
+                    equipment: 21,
+                    capacity: 40
+                },
+                6: {
+                    title: "Laboratorio 6",
+                    description: "Información sobre el Laboratorio 6...",
+                    availability: "No disponible",
+                    equipment: 26,
+                    capacity: 35
+                },
+                7: {
+                    title: "Laboratorio 7",
+                    description: "Información sobre el Laboratorio 7...",
+                    availability: "Disponible",
+                    equipment: 26,
+                    capacity: 35
+                },
+                8: {
+                    title: "Laboratorio 8",
+                    description: "Información sobre el Laboratorio 8...",
+                    availability: "Disponible",
+                    equipment: 26,
+                    capacity: 35
+                },
+                9: {
+                    title: "Laboratorio 9",
+                    description: "Información sobre el Laboratorio 9...",
+                    availability: "No disponible",
+                    equipment: 31,
+                    capacity: 50
+                },
+                10: {
+                    title: "Laboratorio 10",
+                    description: "Información sobre el Laboratorio 10...",
+                    availability: "No disponible",
+                    equipment: 31,
+                    capacity: 50
+                }
+            };
+
+            const lab = labInfo[labNumber];
+            const labInfoDiv = document.getElementById("lab-info");
+
+            labInfoDiv.innerHTML = `
+                <h2>${lab.title}</h2>
+                <p>${lab.description}</p>
+                <p>Equipos: ${lab.equipment}, Capacidad: ${lab.capacity} personas</p>
+                <p>Disponibilidad: ${lab.availability}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
+
